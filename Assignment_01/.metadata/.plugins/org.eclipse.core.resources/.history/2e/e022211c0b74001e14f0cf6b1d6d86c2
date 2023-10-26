@@ -1,0 +1,20 @@
+package assignment01_05;
+
+public class NonRepeating {
+	public static int nonRepeating(int arr[],int size,int key)
+	{
+		int left=0,right=size-1,mid;
+		
+		while(left<=right)
+		{
+			mid=(left+right)
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+

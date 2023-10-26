@@ -1,0 +1,9 @@
+package assignment01_01;
+
+public class Employee {
+	private int empid;
+	private String name;
+	private double salary;
+	
+
+}

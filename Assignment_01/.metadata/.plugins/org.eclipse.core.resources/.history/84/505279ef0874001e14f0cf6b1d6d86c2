@@ -1,0 +1,14 @@
+package assignment01_05;
+
+public class NonRepeating {
+	public static int nonRepeating(int arr[],int size,int key)
+	{
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

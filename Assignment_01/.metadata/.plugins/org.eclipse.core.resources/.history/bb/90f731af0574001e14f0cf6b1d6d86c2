@@ -1,0 +1,42 @@
+package assignment01_04;
+
+import java.util.Scanner;
+
+public class Occurence
+{ 
+    public static int occurrence(int arr[], int size, int key, int n)
+    { 
+        int count = 0;
+        for (int i = 0; i < size; i++) 
+        {
+            if (arr[i] == key)
+            {
+                count++;
+                if (count == n)
+                {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int arr[] = {1,4,5,6,3,3,4,3,2,6};
+
+        System.out.println("Enter the key to search:");
+        int key = scanner.nextInt();
+
+        System.out.println("Enter nth occurrence to find:");
+        int n = scanner.nextInt();
+
+        int index = occurrence(arr, arr.length, key, n); 
+        if (index != -1) {
+            System.out.println("The" +n+ "occurrence of key is found at index: " + index);
+        } else {
+            System.out.println("The" +n+ "occurrence of key was not found.");
+        }
+        scanner.close();
+    }
+}
