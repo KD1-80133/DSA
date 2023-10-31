@@ -20,6 +20,7 @@ public class LinearQueue {
 	public void pop() {
 	
 		front++;
+		
 	}
 	
 	public int peek() {
