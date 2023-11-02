@@ -15,7 +15,7 @@ public class InsertListMain {
 		l1.display();
 		
 		System.out.println("---------------------");
-		l1.addBefore(9);
+		l1.insertAfter(9);
 		System.out.println("Before Given Node :");
 		l1.display();
 		
