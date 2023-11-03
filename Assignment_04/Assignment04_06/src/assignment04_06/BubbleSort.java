@@ -39,9 +39,43 @@ public class BubbleSort {
 		}
 	}
 	
-	public void bubbleSort(int arr[],int N)
+	public void bubbleSort()
 	{
+		Node trav=head ,index=null;
 		
+		if(head==null)
+			return;
+		else {
+			while(trav!=null) {
+				index=trav.next;
+				
+				while(index!=null) {
+					
+					
+					if(trav.data>index.data) {
+						
+						int temp=trav.data;
+						trav.data=index.data;
+						index.data=temp;
+						
+					}
+					index=index.next;
+						
+				}
+				trav=trav.next;
+			}
+		}
 	}
-
+	
+	public void display()
+	{
+		Node trav=head;
+		System.out.println("List:");
+		while(trav!=null) {
+			System.out.print(" "+trav.data);
+			trav=trav.next;
+			
+		}
+		System.out.println(" ");
+	}
 }
