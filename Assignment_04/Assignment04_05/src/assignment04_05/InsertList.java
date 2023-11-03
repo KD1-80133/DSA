@@ -12,12 +12,10 @@ public class InsertList {
         }
     }
 
-    private Node head;
-    private Node tail;  
+    private Node head;  
 
     public InsertList() {
         head = null;
-        tail=null;
     }
 
     public boolean isEmpty() {
@@ -30,31 +28,63 @@ public class InsertList {
             head = newnode;
             
         } else {
-        	newnode.next=head;
-        	head=newnode;
-            
+        	Node trav=head;
+        	while(trav.next!=null)
+        	{
+        		trav=trav.next;
+        	}
+        	trav.next=newnode;
         }
     }
     
-    public void insertAfter(int pos,int value)
+    
+    public void insertAfter(int valueToInsert,int valueToFind)
     {
-    	Node newnode=new Node(value);
+    	Node newnode=new Node(valueToInsert);
+    	
     	if(isEmpty()) {
     		head=newnode;
     	}
-    	else if(pos<=1) {
-    		newnode.next=head;
-    		head=newnode;
-    	}
-    	else
+    	else 
     	{
     		Node trav=head;
-    		for(int i=1;i<pos-1&&trav.next!=null;i++)
+    		while(trav!=null)
+    		{
+    			if(trav.data==valueToFind)
+    			{
+    				newnode.next=newnode.next;
+    				trav.next=newnode;
+    				break;
+    			}
     			trav=trav.next;
+    		}
     	}
     		
     }
    
+    public void insertBefore(int valueToInsert, int valueToFind)
+    {
+        Node newNode = new Node(valueToInsert);
+        if (isEmpty() || head.data == valueToFind) 
+        {
+            newNode.next = head;
+            head = newNode;
+        } 
+        else 
+        {
+            Node current = head;
+            while (current.next != null) 
+            {
+                if (current.next.data == valueToFind) 
+                {
+                    newNode.next = current.next;
+                    current.next = newNode;
+                    break;
+                }
+                current = current.next;
+            }
+        }
+    }
     public void display()
     {
     	Node trav=head;
